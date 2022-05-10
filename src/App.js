@@ -31,7 +31,7 @@ function Board(){
       let box = document.createElement("div")
       box.className = "letter-Box"
       row.appendChild(box);
-    }S
+    }
     
     board.appendChild(row)
   }
