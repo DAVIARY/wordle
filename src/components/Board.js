@@ -1,4 +1,4 @@
-function Board(){
+function DrawBoard(){
     let board = document.getElementById("board");
     for(let i=0; i < 6; i++){
       let row = document.createElement("div")
@@ -13,3 +13,14 @@ function Board(){
     }
     
   } 
+
+  const Board = () => {
+
+    return(
+        <div>
+            <h1> This is Board</h1>
+        </div>
+    )
+}
+
+export default Board; 
