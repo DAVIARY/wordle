@@ -37,5 +37,7 @@ function Board(){
   }
 } 
 
+Board();
 
-export default App;
+
+export default Board;
