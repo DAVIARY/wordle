@@ -8,4 +8,4 @@ const Keyboard = () => {
     )
 }
 
-export default Keaboard
+export default Keyboard

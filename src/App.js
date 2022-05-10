@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import WordleContainer from './components';
 
-function App() {
+function Apps() {
   return (
     <div className="App">
       <header className="App-header">
@@ -22,22 +23,12 @@ function App() {
   );
 }
 
-function Board(){
-  let board = document.getElementById("board");
-  for(let i=0; i < 6; i++){
-    let row = document.createElement("div")
-    row.className="row"
-    for(let u=0; u < 5; u++){
-      let box = document.createElement("div")
-      box.className = "letter-Box"
-      row.appendChild(box);
-    }
-    
-    board.appendChild(row)
-  }
-} 
-
-Board();
+const App = () =>{
+  return(
+    <WordleContainer />
+  )
+}
 
 
-export default Board;
+
+export default App;
