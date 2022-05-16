@@ -4,8 +4,9 @@ import Board from './Board';
 const WordleContainer = () => {
     return (
         <div>
-            <Keyboard Propkey />
+            
             <Board Prop />
+            <Keyboard Propkey />
             
         </div>
     )
