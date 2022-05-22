@@ -1,7 +1,11 @@
+const GUESSES = 6;
+let remainingGuesses = GUESSES;
+
+
 function DrawBoard(){
     let board = document.getElementById("board");
     
-    for(let i=0; i < 6; i++){
+    for(let i=0; i < GUESSES; i++){
       let row = document.createElement("div")
       row.className="row"
       
@@ -16,6 +20,15 @@ function DrawBoard(){
   }
 
   DrawBoard()
+
+  document.addEventListener("keyup", (i) =>{
+    if(remainingGuesses ===0){
+      return
+    }
+
+    pressedKey = String(i.key)
+    
+  })
 
   const Board = () => {
     
