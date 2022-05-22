@@ -1,12 +1,13 @@
-import Keyboard from './Keyboard';
 import Board from './Board';
+import Keyboard from './Keyboard';
+
 
 const WordleContainer = () => {
     return (
         <div>
             
             <Board Prop />
-            <Keyboard Propkey />
+            <Keyboard Prop />
             
         </div>
     )
