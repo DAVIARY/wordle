@@ -1,4 +1,4 @@
-const GUESSES = 6;
+ const GUESSES = 6;
 let remainingGuesses = GUESSES;
 let guessCurrent = [];
 let nextLetter = 0;
@@ -24,13 +24,38 @@ function DrawBoard(){
   DrawBoard()
 
   document.addEventListener("keyup", (i) =>{
-    if(remainingGuesses ===0){
+    if(remainingGuesses === 0){
       return
     }
 
     let key = String(i.key)
+    let correct = key.match(/[a-z]/gi)
+    if(key === "Backspace" && nextLetter !== 0){
+      deleteKey()
+      return
+    }
+    
+    if(!correct || correct.length > 1){
+      return
+    }
+    else{
+      insert(key)
+    }
+
+  
 
   })
+
+  function deleteKey(){
+    let row = document.getElementsByClassName("row")[6 - remainingGuesses]
+    let box = row.children[nextLetter - 1]
+    box. textContent = ""
+    box.classList.remove("F-box")
+    guessCurrent.pop()
+    nextLetter -=1
+  }
+
+
 
   function insert(key){
     if (nextLetter === 5) {
@@ -40,7 +65,7 @@ function DrawBoard(){
     let row = document.getElementsByClassName("row")[6 - remainingGuesses]
     let box = row.children[nextLetter]
     box.textContent = key
-    box.classList.add("box")
+    box.classList.add("F-box")
     guessCurrent.push(key)
     nextLetter +=1
 
