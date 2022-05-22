@@ -1,5 +1,7 @@
 const GUESSES = 6;
 let remainingGuesses = GUESSES;
+let guessCurrent = [];
+let nextLetter = 0;
 
 
 function DrawBoard(){
@@ -26,9 +28,24 @@ function DrawBoard(){
       return
     }
 
-    pressedKey = String(i.key)
-    
+    let key = String(i.key)
+
   })
+
+  function insert(key){
+    if (nextLetter === 5) {
+      return
+    }
+    key = key.toLowerCase()
+    let row = document.getElementsByClassName("row")[6 - remainingGuesses]
+    let box = row.children[nextLetter]
+    box.textContent = key
+    box.classList.add("box")
+    guessCurrent.push(key)
+    nextLetter +=1
+
+
+  }
 
   const Board = () => {
     
