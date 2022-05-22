@@ -15,13 +15,14 @@ function DrawBoard(){
     }  
   }
 
+  DrawBoard()
 
   const Board = () => {
     
     
     return(
     <div>
-          <h1> This is Board</h1>
+          <h1> </h1>
     </div>
   )
 
@@ -29,4 +30,4 @@ function DrawBoard(){
 
 
 
-export default DrawBoard; 
+export default Board; 
