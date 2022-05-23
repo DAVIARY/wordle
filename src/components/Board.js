@@ -29,21 +29,28 @@ function DrawBoard(){
     }
 
     let key = String(i.key)
-    let correct = key.match(/[a-z]/gi)
+    let Keysonly = key.match(/[a-z]/)
     if(key === "Backspace" && nextLetter !== 0){
       deleteKey()
       return
     }
     
-    if(!correct || correct.length > 1){
+    if(!Keysonly || Keysonly.length > 1){
       return
     }
     else{
       insert(key)
     }
 
-  
+  })
 
+  document.getElementById("keyboard").addEventListener("click", (i) =>{
+    let box = i.target
+    let key = box.textContent
+    if (key === "Del"){
+      key = "Backspace"
+    }
+    document.dispatchEvent(new KeyboardEvent("keyup", {'key': key}))
   })
 
   function deleteKey(){
