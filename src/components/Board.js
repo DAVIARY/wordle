@@ -29,8 +29,8 @@ function DrawBoard(){
     }
 
     let key = String(i.key)
-    let Keysonly = key.match(/[a-z]/)
-    if(key === "Backspace" && nextLetter !== 0){
+    let Keysonly = key.match(/[a-z]/gi)
+    if(key === "Backspace" && nextLetter!==0 ){
       deleteKey()
       return
     }
@@ -41,13 +41,14 @@ function DrawBoard(){
     else{
       insert(key)
     }
+    console.log(guessCurrent)
 
   })
 
   document.getElementById("keyboard").addEventListener("click", (i) =>{
     let box = i.target
     let key = box.textContent
-    if (key === "Del"){
+    if (key === "Del" && guessCurrent != 1){
       key = "Backspace"
     }
     document.dispatchEvent(new KeyboardEvent("keyup", {'key': key}))

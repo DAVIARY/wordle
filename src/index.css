@@ -53,12 +53,12 @@ h1 {
 
 .button{
   text-transform: uppercase;
-  margin: 1px;
+  margin: .5px;
   font-weight: 900;
   cursor: pointer;
 }
 
 .second-row{
-  margin: 2px 0;
+  margin: 1.5px;
 }
 
