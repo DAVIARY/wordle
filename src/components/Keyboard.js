@@ -1,6 +1,6 @@
 
 const Keyboard = () => {
-
+    let keyboard = document.getElementById("keyboard");
     return(
         <div id="keyboard">
         <div class="first-row">
@@ -40,7 +40,6 @@ const Keyboard = () => {
     </div>
         
     )
+    
 }
-
-Keyboard()
 export default Keyboard
