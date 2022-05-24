@@ -54,7 +54,10 @@ function DrawBoard(){
 //enterword function checks if you have less than 5 letters before before cheking it to the answer word. 
 function enterword(){
   let correctword = ""
-  
+  let row = document.getElementsByClassName("row")[6-remainingGuesses]
+
+   
+
   if(guessCurrent.length != 5){
     console.log("you need more letters")
     alert("you need more letters")
@@ -62,13 +65,17 @@ function enterword(){
   }
  
   for(let i = 0; i < 5; i++){
+    let box = row.children[i]
+    let possition = word.indexOf(guessCurrent[i])
+    if(guessCurrent[i] === word[i]){
+      box.style.backgroundColor = "green"}
     
   }
- 
- 
+
   for(const i of guessCurrent){
     correctword += i
   }
+  
 
   if(correctword === word){
     console.log(guessCurrent.toString)
