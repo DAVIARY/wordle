@@ -51,7 +51,7 @@ function DrawBoard(){
     console.log(guessCurrent)
 
   })
-
+//enterword function checks if you have less than 5 letters before before cheking it to the answer word. 
 function enterword(){
   let correctword = ""
   
