@@ -25,7 +25,7 @@ h1 {
   
   display:  flex;
   justify-content: center;
-  align-items: center;
+  align-items:center;
   text-transform: uppercase;
   border: 5px solid black;
   margin: 5px;

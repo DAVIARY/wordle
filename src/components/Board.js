@@ -31,6 +31,11 @@ function DrawBoard(){
 
     let key = String(i.key)
     let Keysonly = key.match(/[a-z]/gi)
+    
+    if(key === "Enter"){
+      enterword()
+    }
+    
     if(key === "Backspace" && nextLetter!==0 ){
       deleteKey()
       return
@@ -45,11 +50,18 @@ function DrawBoard(){
     console.log(guessCurrent)
 
   })
+
+function enterword(){
+  if(guessCurrent.length <5){
+    return
+  }
+}
+
 //Extended event listener to the onscreen keyboard to accpet intup for the board.
   document.getElementById("keyboard").addEventListener("click", (i) =>{
     let box = i.target
     let key = box.textContent
-    if (key === "Del" && guessCurrent != 1){
+    if (key === "Delete" && guessCurrent != 1){
       key = "Backspace"
     }
     document.dispatchEvent(new KeyboardEvent("keyup", {'key': key}))
@@ -60,7 +72,7 @@ function DrawBoard(){
     let row = document.getElementsByClassName("row")[6 - remainingGuesses]
     let box = row.children[nextLetter - 1]
     box. textContent = ""
-    box.classList.remove("F-box")
+    box.classList.remove("previous-box")
     guessCurrent.pop()
     nextLetter -=1
   }
