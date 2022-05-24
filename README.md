@@ -8,4 +8,4 @@ You will have to guess the 5 letter word to win.
 
 You will have 6 guess to get the right word.
 
-After summting each word, you will see a yellow backgorund on letters that in the word but not in the correct spot. And a green groundgrouind on letters that are on the correct spot.
+After summting each word, you will see a yellow backgorund on letters that in the word but not in the correct spot. And a green groundground on letters that are on the correct spot.
