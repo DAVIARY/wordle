@@ -2,6 +2,7 @@
 let remainingGuesses = GUESSES;
 let guessCurrent = [];
 let nextLetter = 0;
+let word =["r","e","a","c","t"];
 
 //DrawBoard intiazies the board with the number of guesses with 5 letter words
 function DrawBoard(){
@@ -52,7 +53,14 @@ function DrawBoard(){
   })
 
 function enterword(){
-  if(guessCurrent.length <5){
+  if(guessCurrent.length != 5){
+    console.log("you need more letters")
+    return
+  }
+
+  if(guessCurrent.toString === "react"){
+    console.log(guessCurrent.toString)
+    console.log("you won")
     return
   }
 }
