@@ -62,10 +62,20 @@ function enterword(){
 for(const i of guessCurrent){
   correctword += i
 }
+
+  if(correctword != word){
+    console.log("It's not the correct word")
+  }
+
   if(correctword === word){
     console.log(guessCurrent.toString)
     console.log("you won!!!")
     return
+  }
+  else{
+    remainingGuesses -= 1;
+    guessCurrent = [];
+    nextLetter = 0;
   }
 }
 
