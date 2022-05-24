@@ -57,6 +57,7 @@ function enterword(){
   
   if(guessCurrent.length != 5){
     console.log("you need more letters")
+    alert("you need more letters")
     return
   }
  
