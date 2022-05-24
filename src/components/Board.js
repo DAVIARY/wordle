@@ -28,6 +28,7 @@ DrawBoard()
 //Event listener waits for an input from the keyboard to insert it to the board, it has parameters to accept letters only.
 document.addEventListener("keyup", (i) => {
   if (remainingGuesses === 0) {
+    alert("you lost")
     return
   }
 
@@ -149,4 +150,4 @@ const Board = () => {
 
 
 
-export default Board; 
+export default DrawBoard; 
