@@ -66,7 +66,7 @@ function DrawBoard(){
   }
 
 
-
+//insert function takes in a letter from the keyboard and interts it into the board.
   function insert(key){
     if (nextLetter === 5) {
       return
@@ -75,7 +75,7 @@ function DrawBoard(){
     let row = document.getElementsByClassName("row")[6 - remainingGuesses]
     let box = row.children[nextLetter]
     box.textContent = key
-    box.classList.add("F-box")
+    box.classList.add("previous-box")
     guessCurrent.push(key)
     nextLetter +=1
 
