@@ -59,12 +59,14 @@ function enterword(){
     console.log("you need more letters")
     return
   }
-for(const i of guessCurrent){
-  correctword += i
-}
-
-  if(correctword != word){
-    console.log("It's not the correct word")
+ 
+  for(let i = 0; i < 5; i++){
+    
+  }
+ 
+ 
+  for(const i of guessCurrent){
+    correctword += i
   }
 
   if(correctword === word){
@@ -76,6 +78,7 @@ for(const i of guessCurrent){
     remainingGuesses -= 1;
     guessCurrent = [];
     nextLetter = 0;
+    console.log("It's not the correct word")
   }
 }
 
