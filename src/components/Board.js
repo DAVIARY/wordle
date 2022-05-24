@@ -3,7 +3,7 @@ let remainingGuesses = GUESSES;
 let guessCurrent = [];
 let nextLetter = 0;
 
-
+//DrawBoard intiazies the board with the number of guesses with 5 letter words
 function DrawBoard(){
     let board = document.getElementById("board");
     
