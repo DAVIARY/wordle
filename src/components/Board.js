@@ -55,6 +55,7 @@ function DrawBoard(){
     document.dispatchEvent(new KeyboardEvent("keyup", {'key': key}))
   })
 
+  //delect fuction deletes the letters inside the board one by one.
   function deleteKey(){
     let row = document.getElementsByClassName("row")[6 - remainingGuesses]
     let box = row.children[nextLetter - 1]
