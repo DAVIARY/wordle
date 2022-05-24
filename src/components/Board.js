@@ -82,15 +82,16 @@ function enterword() {
 
 
   if (correctword === word) {
-    console.log(guessCurrent.toString)
-    console.log("you won!!!")
+    alert("You Won!!!")
+    console.log("You Won!!!")
     return
   }
   else {
     remainingGuesses -= 1;
     guessCurrent = [];
     nextLetter = 0;
-    console.log("It's not the correct word")
+    console.log("It's not the correct word!!!")
+    alert("It's not the correct word!!!")
   }
 }
 
