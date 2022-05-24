@@ -45,7 +45,7 @@ function DrawBoard(){
     console.log(guessCurrent)
 
   })
-
+//Extended event listener to the onscreen keyboard to accpet intup for the board.
   document.getElementById("keyboard").addEventListener("click", (i) =>{
     let box = i.target
     let key = box.textContent
