@@ -8,10 +8,11 @@ let word = "react";
 function DrawBoard() {
   let board = document.getElementById("board");
 
+  //Creates the rows
   for (let i = 0; i < GUESSES; i++) {
     let row = document.createElement("div")
     row.className = "row"
-
+  //Creates the boxes
     for (let u = 0; u < 5; u++) {
       let box = document.createElement("div")
       box.className = "box"
@@ -33,15 +34,16 @@ document.addEventListener("keyup", (i) => {
   let key = String(i.key)
   let Keysonly = key.match(/[a-z]/gi)
 
+  //Detects if enter was pressed on the keyboard
   if (key === "Enter") {
     enterword()
   }
-
+  //Detects if backspace was pressed on the keyboard and it's not pointing at index 0
   if (key === "Backspace" && nextLetter !== 0) {
     deleteKey()
     return
   }
-
+  //Detects if letters a-z are pressed
   if (!Keysonly || Keysonly.length > 1) {
     return
   }
@@ -53,17 +55,18 @@ document.addEventListener("keyup", (i) => {
 })
 //enterword function checks if you have less than 5 letters before before cheking it to the answer word. 
 function enterword() {
-  let correctword = ""
+  let inputWord = ""
   let row = document.getElementsByClassName("row")[6 - remainingGuesses]
 
 
-
+  //Detects is the words has at least 5 words
   if (guessCurrent.length != 5) {
     console.log("you need more letters")
     alert("you need more letters")
     return
   }
-
+  
+  //Checks if the letter it's in the correct spot and if it's in the word
   for (let i = 0; i < 5; i++) {
     let box = row.children[i]
     let possition = word.indexOf(guessCurrent[i])
@@ -75,13 +78,14 @@ function enterword() {
     }
 
   }
-
+  
+  //creates a copy of the word you entered
   for (let i of guessCurrent) {
-    correctword += i
+    inputWord += i
   }
 
-
-  if (correctword === word) {
+  //checks if you got the correct word
+  if (inputWord === word) {
     alert("You Won!!!")
     console.log("You Won!!!")
     return
@@ -110,7 +114,7 @@ function deleteKey() {
   let row = document.getElementsByClassName("row")[6 - remainingGuesses]
   let box = row.children[nextLetter - 1]
   box.textContent = ""
-  box.classList.remove("previous-box")
+  box.classList.remove()
   guessCurrent.pop()
   nextLetter -= 1
 }
@@ -125,7 +129,7 @@ function insert(key) {
   let row = document.getElementsByClassName("row")[6 - remainingGuesses]
   let box = row.children[nextLetter]
   box.textContent = key
-  box.classList.add("previous-box")
+  box.classList.add()
   guessCurrent.push(key)
   nextLetter += 1
 
